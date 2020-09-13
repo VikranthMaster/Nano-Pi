@@ -10,8 +10,11 @@ import time
 def speak(audio):
 	myText = audio
 	language = "en"
-	gTTS(text=myText,lang=language,slow=False)
-
+	output = gTTS(text=myText,lang=language,slow=False)
+	output.save("output.mp3")
+	playsound("output.mp3")
+	
+	
 def speech():
     
     r = sr.Recognizer()
